@@ -1,7 +1,15 @@
 #!/usr/bin/ruby -w
-
 require 'sinatra'
+require 'mysql'
 
-get '/hi'do
-    "<h2 style='text-align:center'>Sinatra Works!</h2>"
+mysql = Mysql.new("host", "user", "password", "database")
+query = mysql.query("SELECT ...")
+result = query.fetch_row()
+mysql.close
+
+get '/'do
+    send_file 'home.html'
 end
+
+
+
