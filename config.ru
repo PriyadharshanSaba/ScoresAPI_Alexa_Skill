@@ -1,2 +1,2 @@
-require './test'
-run HiSinatra
+require './app'
+run Sinatra::Application
