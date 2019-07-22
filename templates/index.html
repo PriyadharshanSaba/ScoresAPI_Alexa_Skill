@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myModule">
+  <head>
+    <script src="scripts/angular.js"></script>
+    <script src='scripts/game.js'></script>
+    <script src='scripts/script.js'></script>
+  </head>
+  
+  <body ng-controller="myController">
+    <form id="addingPLayers">
+      <label>Player Name <input type="text" ng-model="user" /> </label>
+      <button id="addPlayers" ng-click="addPlayer(user)">Add Player</button>
+    </form>
+
+    <h4 ng-repeat="pl in rowArr">{{ pl.pname }}</h4>
+    <br><br>
+    <form id="submitPLayers" method="POST" action="\players">
+      <button type="submit" id="submitPLayers">Done</button>
+    </form>
+    
+  </body>
+</html>

@@ -1,17 +1,22 @@
+var express = require('express');
+var app = express();
 require('dotenv').config()
-const { Pool, Client } = require('pg')
-const connectionString = process.env.DATABASE_URL;
+var appController = require('./controllers/appController');
 
-const text = 'INSERT INTO points(pid, name, point) VALUES($1, $2, $3)'
-const values = [4,'KKS',0]
 
-const client = new Client({
-  connectionString: connectionString,
-  ssl: true
-})
-client.connect()
-client.query(text, values, (err, res) => {
-  console.log(err, res)
-  client.end()
-})
+//template engine
+app.set('view engine','ejs');
+
+//static dir
+app.use(express.static('./static'));
+
+//listen to port
+app.listen(3000, function(){
+    console.log("Listening on port 3000...");
+});
+
+//controllers of app
+appController(app);
+
+
 
