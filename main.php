@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="myModule">
   <head>
-    <script src="scripts/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src='scripts/game.js'></script>
     <script src='scripts/script.js'></script>
     <?php include 'backend.php'; ?>

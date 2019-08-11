@@ -20,20 +20,5 @@ app.controller("myController", function($scope,$http)
         };
 
         var dre = $scope.rowArr;
-        
-        $scope.subpl = function (plData) {
-            var plData = plData;
-            $http.post('/players', JSON.stringify(plData)).then(function (response) {
-                if (response)
-                $scope.msg = "Post Data Submitted Successfully!";
-                }, function (response) {
-                $scope.msg = "Service not Exists";
-                $scope.statusval = response.status;
-                $scope.statustext = response.statusText;
-                $scope.headers = response.headers();
-        });
-
-        //amplify.store("PlData", dre);
-    };
     });
 
